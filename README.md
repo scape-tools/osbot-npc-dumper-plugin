@@ -19,6 +19,10 @@ A simple plugin for [OSBot](http://osbot.org/) that dumps npc spawns into [JSON]
 7. Stop the plugin to see the spawns.
 8. The spawns are located in the OSBot/Data folder.
 
+### Notes
+* Dump areas of npcs at once for accurate results. If you switch worlds and try to dump the same area again you'll get duplicate npcs because npc's have different global ids.
+* Rotation is not entirely accurate because players change the rotation of npcs by clicking on them.
+
 ### Format
 ```json
 [
