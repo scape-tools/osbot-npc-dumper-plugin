@@ -1,4 +1,4 @@
-#OSBot Npc Dumper Plugin (1.1)
+# OSBot Npc Dumper Plugin (1.1)
 
 A simple plugin for [OSBot](http://osbot.org/) that dumps npc spawns into [JSON](http://www.json.org/JSON) format.
 
