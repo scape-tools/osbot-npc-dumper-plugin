@@ -5,25 +5,27 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
 import org.osbot.rs07.api.model.NPC;
 import org.osbot.rs07.script.Script;
 import org.osbot.rs07.script.ScriptManifest;
-
-import com.google.common.collect.ImmutableSet;
 
 @ScriptManifest(name = "NpcSpawnDumper", author = "nshusa", version = 1.1D, info = "", logo = "")
 public class NpcSpawnDumper extends Script {
 
 	private static final Map<Integer, NpcSpawn> globalNpcIdToSpawnMap = new HashMap<>();
 	
-	private static final String DIRECTORY = System.getProperty("user.home") + "/OSBot/Data/";
+	private static final String DIRECTORY = System.getProperty("user.home") + "/OSBot/Data/";	
 	
-	private static final ImmutableSet<Integer> PETS = ImmutableSet.of(318, 497, 2055, 2131, 5536, 5561, 5892, 6629, 6631, 6633, 6635, 6637,
+	private static final Set<Integer> pets = new HashSet<>(Arrays.asList(318, 497, 2055, 2131, 5536, 5561, 5892, 6629, 6631, 6633, 6635, 6637,
 			6639, 6642, 6715, 6719, 7334, 7337, 7339, 7341, 7343, 7345, 7347, 7349, 495, 964, 2130, 2132, 5537, 5884, 6628, 6630, 6632, 6634, 6636,
-			6638, 6640, 7520, 6718, 6723, 7336, 6720, 7335, 7338, 7340, 7342, 7344, 7346, 7348, 7350);
+			6638, 6640, 7520, 6718, 6723, 7336, 6720, 7335, 7338, 7340, 7342, 7344, 7346, 7348, 7350));
 
 	public void onStart() {
 		log("npc spawn dumper script started");
@@ -43,7 +45,7 @@ public class NpcSpawnDumper extends Script {
 				continue;
 			}
 			
-			if (PETS.contains(npc.getId())) {
+			if (pets.contains(npc.getId())) {
 				continue;
 			}
 
