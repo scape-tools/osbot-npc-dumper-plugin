@@ -98,6 +98,8 @@ public class NpcSpawnDumper extends Script {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		globalNpcIdToSpawnMap.clear();
 		
 		log("npc spawn dumper script ended");
 
