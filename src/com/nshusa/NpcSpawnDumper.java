@@ -20,7 +20,7 @@ import org.osbot.rs07.script.ScriptManifest;
 public class NpcSpawnDumper extends Script {
 
 	private static final Map<Integer, NpcSpawn> globalNpcIdToSpawnMap = new HashMap<>();
-	
+
 	private static final String DIRECTORY = System.getProperty("user.home") + "/OSBot/Data/";	
 	
 	private static final Set<Integer> pets = new HashSet<>(Arrays.asList(318, 497, 1626, 2055, 2131, 5536, 5561, 5892, 6629, 6631, 6633, 6635, 6637,
@@ -87,7 +87,7 @@ public class NpcSpawnDumper extends Script {
 				writer.println("\t\t\"position\": {");
 				writer.println("\t\t\t\"x\": " + spawn.getPosition().getX() + ",");
 				writer.println("\t\t\t\"y\": " + spawn.getPosition().getY() + ",");
-				writer.println("\t\t\t\"z\": " + spawn.getPosition().getZ());
+				writer.println("\t\t\t\"height\": " + spawn.getPosition().getZ());
 				writer.println("\t\t},");
 				writer.println("\t\t\"facing\": \"" + spawn.getDirection() + "\"" + ",");
 				writer.println("\t\t\"radius\": " + spawn.getRadius());
