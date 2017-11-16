@@ -16,8 +16,10 @@ import org.osbot.rs07.api.model.NPC;
 import org.osbot.rs07.script.Script;
 import org.osbot.rs07.script.ScriptManifest;
 
-@ScriptManifest(name = "NpcSpawnDumper", author = "nshusa", version = 1.1D, info = "", logo = "")
+@ScriptManifest(name = "NpcSpawnDumper", author = "nshusa", version = 1.2D, info = "", logo = "")
 public class NpcSpawnDumper extends Script {
+
+	private static final int MIN_NPC_WALK = 5;
 
 	private static final Map<Integer, NpcSpawn> globalNpcIdToSpawnMap = new HashMap<>();
 
@@ -54,10 +56,16 @@ public class NpcSpawnDumper extends Script {
 				
 				if (s.getPosition().getX() != npc.getX() && s.getPosition().getY() != npc.getY() && s.getPosition().getZ() == npc.getZ()) {
 			         s.setPosition(new Position(npc.getX(), npc.getY(), npc.getZ()));
-			         int x = IntUtils.distance(s.getPosition(), s.getCreatedPosition());
-			         if(s.getRadius() < x) {
-			            s.setRadius(x);
-			         }
+			         final int distance = IntUtils.distance(s.getPosition(), s.getCreatedPosition());
+
+			         if (distance > s.getRadius()) {
+			         	s.setRadius(distance);
+					 }
+
+					 if (s.getRadius() > 0 && s.getRadius() < MIN_NPC_WALK) {
+			         	s.setRadius(MIN_NPC_WALK);
+					 }
+
 				}				
 				continue;
 			}
