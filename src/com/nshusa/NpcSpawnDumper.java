@@ -73,7 +73,7 @@ public class NpcSpawnDumper extends Script {
 			globalNpcIdToSpawnMap.put(npc.getIndex(), new NpcSpawn(npc.getId(), new Position(npc.getX(), npc.getY(), npc.getZ()), npc.getRotation()));
 		}
 
-		return 500;
+		return 300;
 	}
 
 	@Override
