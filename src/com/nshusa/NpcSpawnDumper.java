@@ -1,5 +1,9 @@
 package com.nshusa;
 
+import org.osbot.rs07.api.model.NPC;
+import org.osbot.rs07.script.Script;
+import org.osbot.rs07.script.ScriptManifest;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,10 +15,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import org.osbot.rs07.api.model.NPC;
-import org.osbot.rs07.script.Script;
-import org.osbot.rs07.script.ScriptManifest;
 
 @ScriptManifest(name = "NpcSpawnDumper", author = "nshusa", version = 1.2D, info = "", logo = "")
 public class NpcSpawnDumper extends Script {
